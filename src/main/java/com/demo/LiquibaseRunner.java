@@ -21,13 +21,13 @@ public class LiquibaseRunner {
         String databaseUser = "fptuser";
         String databasePassword = "123456aA@";
         String changeLogFile = "db.changelog-master.xml";
-        if (args[0] != null) {
+        if (args != null && args.length > 0) {
             if (args[0].equalsIgnoreCase("dev")) {
-                changeLogFile = "db.changelog-dev.xml";
+                changeLogFile = "dev/db.changelog-dev.xml";
             } else if (args[0].equalsIgnoreCase("prod")) {
-                changeLogFile = "db.changelog-prod.xml";
+                changeLogFile = "prod/db.changelog-prod.xml";
             } else if (args[0].equalsIgnoreCase("stg")) {
-                changeLogFile = "db.changelog-stg.xml";
+                changeLogFile = "stg/db.changelog-stg.xml";
             }
         }
 
